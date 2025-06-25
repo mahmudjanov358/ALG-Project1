@@ -33,17 +33,6 @@ exports.getCartItemById = async (req, res) => {
   }
 };
 
-exports.updateCartItem = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Error updated CartItem — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-};
-
 exports.deleteCartItem = async (req, res) => {
   try {
   } catch (error) {

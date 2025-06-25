@@ -33,17 +33,6 @@ exports.getOrderById = async (req, res) => {
   }
 };
 
-exports.updateOrder = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Error updated Order — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-};
-
 exports.deleteOrder = async (req, res) => {
   try {
   } catch (error) {

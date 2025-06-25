@@ -33,17 +33,6 @@ exports.getFavoriteById = async (req, res) => {
   }
 };
 
-exports.updateFavorite = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Error updated Favorite — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-};
-
 exports.deleteFavorite = async (req, res) => {
   try {
   } catch (error) {
