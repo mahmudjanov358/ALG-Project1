@@ -29,7 +29,7 @@ exports.postUser = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Error creating user —", error);
+    console.error("Error creating User —", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",
@@ -41,7 +41,7 @@ exports.postUser = async (req, res) => {
 exports.postUserLogin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error login user — ", error);
+    console.error("Error login User — ", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",
@@ -58,7 +58,7 @@ exports.getUser = async (req, res) => {
       users: user,
     });
   } catch (error) {
-    console.error("Error retrieving user list", error);
+    console.error("Error retrieving User list", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",
@@ -83,7 +83,7 @@ exports.getUserById = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Error searching for user id — ", error);
+    console.error("Error searching for User id — ", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",
@@ -122,7 +122,7 @@ exports.updateUser = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Error updating user —", error);
+    console.error("Error updating User —", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",
@@ -148,7 +148,7 @@ exports.deleteUser = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Error deleted user — ", error);
+    console.error("Error deleted User — ", error);
     return res.status(500).json({
       success: false,
       message: "Internal Server Error!",

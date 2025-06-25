@@ -1,0 +1,56 @@
+const { Cart } = require("../models/cartSchema"); // ----Cart Model
+
+exports.postCart = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Error creating Cart — ", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error!",
+    });
+  }
+};
+
+exports.getCart = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Error retrieving Cart list — ", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error!",
+    });
+  }
+};
+
+exports.getCartById = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Error searching for Cart id — ", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error!",
+    });
+  }
+};
+
+exports.updateCart = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Error updated Cart — ", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error!",
+    });
+  }
+};
+
+exports.deleteCart = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Error deleted Order — ", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error!",
+    });
+  }
+};
