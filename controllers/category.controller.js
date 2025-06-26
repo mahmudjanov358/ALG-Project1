@@ -9,10 +9,16 @@ exports.postCategory = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postCategory
 
 exports.getCategory = async (req, res) => {
   try {
+    const category = await Category.find({});
+    return res.status(200).json({
+      success: true,
+      message: "Category list!",
+      categorys: category,
+    });
   } catch (error) {
     console.error("Error retrieving Category list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getCategory = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCategory
 
 exports.getCategoryById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getCategoryById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCategoryById
 
 exports.updateCategory = async (req, res) => {
   try {
@@ -42,7 +48,7 @@ exports.updateCategory = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----updateCategory
 
 exports.deleteCategory = async (req, res) => {
   try {
@@ -53,4 +59,4 @@ exports.deleteCategory = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteCategory

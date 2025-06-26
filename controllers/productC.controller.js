@@ -9,9 +9,15 @@ exports.postProductC = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postProductC
 
 exports.getProductC = async (req, res) => {
+  const productC = await ProductC.find({});
+  return res.status(200).json({
+    success: true,
+    message: "ProductC list!",
+    productCs: productC,
+  });
   try {
   } catch (error) {
     console.error("Error retrieving ProductC list — ", error);
@@ -20,7 +26,7 @@ exports.getProductC = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getProductC
 
 exports.getProductCById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getProductCById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getProductCById
 
 exports.updateProductC = async (req, res) => {
   try {
@@ -42,7 +48,7 @@ exports.updateProductC = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----updateProductC
 
 exports.deleteProductC = async (req, res) => {
   try {
@@ -53,4 +59,4 @@ exports.deleteProductC = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteProductC

@@ -9,10 +9,16 @@ exports.postAdmin = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postAdmin
 
 exports.getAdmin = async (req, res) => {
   try {
+    const admin = await Admin.find({});
+    return res.status(200).json({
+      success: true,
+      message: "Admin",
+      admin: admin,
+    });
   } catch (error) {
     console.error("Error retrieving Admin list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getAdmin = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getAdmin
 
 exports.getAdminById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getAdminById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getAdminById
 
 exports.updateAdmin = async (req, res) => {
   try {
@@ -42,7 +48,7 @@ exports.updateAdmin = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----updateAdmin
 
 exports.deleteAdmin = async (req, res) => {
   try {
@@ -53,4 +59,4 @@ exports.deleteAdmin = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteAdmin

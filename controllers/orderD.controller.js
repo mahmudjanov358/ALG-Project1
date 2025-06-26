@@ -9,10 +9,16 @@ exports.postOrderD = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postOrderD
 
 exports.getOrderD = async (req, res) => {
   try {
+    const orderD = await OrderD.find({});
+    return res.status(200).json({
+      success: true,
+      message: "OrderD list!",
+      orderDs: orderD,
+    });
   } catch (error) {
     console.error("Error retrieving OrderD list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getOrderD = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getOrderD
 
 exports.getOrderDById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getOrderDById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getOrderDById
 
 exports.updateOrderD = async (req, res) => {
   try {
@@ -42,7 +48,7 @@ exports.updateOrderD = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----updateOrderD
 
 exports.deleteOrderD = async (req, res) => {
   try {
@@ -53,4 +59,4 @@ exports.deleteOrderD = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteOrderD

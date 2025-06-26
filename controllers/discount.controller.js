@@ -9,10 +9,16 @@ exports.postDiscount = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postDiscount
 
 exports.getDiscount = async (req, res) => {
   try {
+    const discount = await Discount.find({});
+    return res.status(200).json({
+      success: true,
+      message: "Discount list!",
+      discounts: discount,
+    });
   } catch (error) {
     console.error("Error retrieving Discount list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getDiscount = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getDiscount
 
 exports.getDiscountById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getDiscountById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getDiscountById
 
 exports.updateDiscount = async (req, res) => {
   try {
@@ -42,7 +48,7 @@ exports.updateDiscount = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----updateDiscount
 
 exports.deleteDiscount = async (req, res) => {
   try {
@@ -53,4 +59,4 @@ exports.deleteDiscount = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteDiscount

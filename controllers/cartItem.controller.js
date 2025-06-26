@@ -9,10 +9,16 @@ exports.postCartItem = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postCartItem
 
 exports.getCartItem = async (req, res) => {
   try {
+    const cartItem = await CartItem.find({});
+    return res.status(200).json({
+      success: true,
+      message: "CartItem list!",
+      cartItems: cartItem,
+    });
   } catch (error) {
     console.error("Error retrieving CartItem list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getCartItem = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCartItem
 
 exports.getCartItemById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getCartItemById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCartItemById
 
 exports.deleteCartItem = async (req, res) => {
   try {
@@ -42,4 +48,4 @@ exports.deleteCartItem = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteCartItem

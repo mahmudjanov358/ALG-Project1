@@ -20,6 +20,10 @@ async function connectToDB() {
 }
 connectToDB();
 
+// ----Routes
+const { user } = require("./routes/user.routes");
+app.use("/user", user);
+
 // ----Server
 const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {

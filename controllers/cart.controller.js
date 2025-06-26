@@ -9,10 +9,16 @@ exports.postCart = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----postCart
 
 exports.getCart = async (req, res) => {
   try {
+    const cart = await Cart.find({});
+    return res.status(200).json({
+      success: true,
+      message: "Cart list!",
+      carts: cart,
+    });
   } catch (error) {
     console.error("Error retrieving Cart list — ", error);
     return res.status(500).json({
@@ -20,7 +26,7 @@ exports.getCart = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCart
 
 exports.getCartById = async (req, res) => {
   try {
@@ -31,7 +37,7 @@ exports.getCartById = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----getCartById
 
 exports.deleteCart = async (req, res) => {
   try {
@@ -42,4 +48,4 @@ exports.deleteCart = async (req, res) => {
       message: "Internal Server Error!",
     });
   }
-};
+}; // ----deleteCart

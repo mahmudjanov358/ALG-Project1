@@ -1,6 +1,6 @@
 const Joi = require("joi"); // ----Joi Library
 
-exports.postUserValidation = Joi.object({
+exports.postUserValidationSchema = Joi.object({
   username: Joi.string().required().min(3).max(30),
   name: Joi.string().required(),
   lastName: Joi.string().required(),
@@ -10,7 +10,7 @@ exports.postUserValidation = Joi.object({
   photo: Joi.string().optional(),
 }); // ----postUserValidation
 
-exports.updateUserValidation = exports.postUserValidation.fork(
-  Object.keys(exports.postUserValidation.describe().keys),
+exports.updateUserValidationSchema = exports.postUserValidationSchema.fork(
+  Object.keys(exports.postUserValidationSchema.describe().keys),
   (schema) => schema.optional()
 ); // ----updateUserValidation
