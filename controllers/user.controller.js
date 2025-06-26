@@ -79,6 +79,7 @@ exports.getUserById = async (req, res) => {
     } else {
       return res.status(200).json({
         success: true,
+        message: "User found!",
         user: user,
       });
     }
