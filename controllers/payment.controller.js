@@ -1,120 +1,73 @@
-const { Payment } = require("../models/paymentSchema"); // ----Payment Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postPayment = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
-    const { name } = req.body;
-    const newPayment = await Payment({
-      name,
-    });
-    await newPayment.save();
-    return res.status(200).json({
-      success: true,
-      message: "Payment created successfully!",
-    });
   } catch (error) {
-    console.error("Error creating Payment — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postPayment
+};
 
-exports.getPayment = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
-    const payment = await Payment.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Payment list!",
-      payments: payment,
-    });
   } catch (error) {
-    console.error("Error retrieving Payment list — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getPayment
+};
 
-exports.getPaymentById = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
-    const paymentId = req.params.id;
-    const payment = await Payment.findById(paymentId);
-
-    if (!payment) {
-      return res.status(404).json({
-        success: false,
-        message: "Payment not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Payment found!",
-        payment: payment,
-      });
-    }
   } catch (error) {
-    console.error("Error searching for Payment id — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getPaymentById
+};
 
-exports.updatePayment = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { name } = req.body;
-    const updatedPayment = await Payment.findByIdAndUpdate(
-      id,
-      { name },
-      { new: true }
-    );
-
-    if (!updatedPayment) {
-      return res.status(404).json({
-        success: false,
-        message: "Payment not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Payment updated successfully!",
-        payment: updatedPayment,
-      });
-    }
   } catch (error) {
-    console.error("Error updated Payment — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----updatePayment
+};
 
-exports.deletePayment = async (req, res) => {
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
   try {
-    const paymentId = req.params.id;
-    const deletedPayment = await Payment.findByIdAndDelete(paymentId);
-
-    if (!deletedPayment) {
-      return res.status(404).json({
-        success: false,
-        message: "Payment not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Payment deleted successfully!",
-      });
-    }
   } catch (error) {
-    console.error("Error deleted Payment — ", error);
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deletePayment
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

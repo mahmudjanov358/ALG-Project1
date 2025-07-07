@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const statusSchema = new Schema({
-  status: { type: BigInt },
+  status: { type: String, required: true },
 });
 
 const Status = model("Status", statusSchema);

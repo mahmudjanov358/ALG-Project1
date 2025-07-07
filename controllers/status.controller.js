@@ -1,122 +1,73 @@
-const { Status } = require("../models/statusSchema"); // ----Status Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postStatus = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
-    const { status } = req.body;
-    const newStatus = await Status({
-      status,
-    });
-    await newStatus.save();
-    return res.status(200).json({
-      success: true,
-      message: "Status created successfully!",
-    });
   } catch (error) {
-    console.error("Error creating Status — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postStatus
+};
 
-exports.getStatus = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
-    const status = await Status.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Statuss list!",
-      statuss: status,
-    });
   } catch (error) {
-    console.error("Error retrieving Status list — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getStatus
+};
 
-exports.getStatusById = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
-    const statusId = req.params.id;
-    const status = await Status.findById(statusId);
-
-    if (!status) {
-      return res.status(404).json({
-        success: false,
-        message: "Status not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Status found!",
-        status: status,
-      });
-    }
   } catch (error) {
-    console.error("Error searching for Status id — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getStatusById
+};
 
-exports.updateStatus = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { status } = req.body;
-    const updatedStatus = await Status.findByIdAndUpdate(
-      id,
-      {
-        status,
-      },
-      { new: true }
-    );
-
-    if (!updatedStatus) {
-      return res.status(404).json({
-        success: false,
-        message: "Status not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: false,
-        message: "Status updated successfully!",
-        status: updatedStatus,
-      });
-    }
   } catch (error) {
-    console.error("Error updated Status — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----updateStatus
+};
 
-exports.deleteStatus = async (req, res) => {
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
   try {
-    const statusId = req.params.id;
-    const deletedStatus = await Status.findByIdAndDelete(statusId);
-
-    if (!deletedStatus) {
-      return res.status(404).json({
-        success: false,
-        message: "Status not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Status deleted successfully!",
-      });
-    }
   } catch (error) {
-    console.error("Error deleted Status — ", error);
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deleteStatus
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

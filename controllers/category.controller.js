@@ -1,62 +1,73 @@
-const { Category } = require("../models/categorySchema"); // ----Category Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postCategory = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error creating Category — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postCategory
+};
 
-exports.getCategory = async (req, res) => {
-  try {
-    const category = await Category.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Category list!",
-      categorys: category,
-    });
-  } catch (error) {
-    console.error("Error retrieving Category list — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-}; // ----getCategory
-
-exports.getCategoryById = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error searching for Category id — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getCategoryById
+};
 
-exports.updateCategory = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error updated Category — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----updateCategory
+};
 
-exports.deleteCategory = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error deleted Category — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deleteCategory
+};
+
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

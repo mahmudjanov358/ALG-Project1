@@ -1,62 +1,73 @@
-const { Discount } = require("../models/discountSchema"); // ----Discount Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postDiscount = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error creating Discount — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postDiscount
+};
 
-exports.getDiscount = async (req, res) => {
-  try {
-    const discount = await Discount.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Discount list!",
-      discounts: discount,
-    });
-  } catch (error) {
-    console.error("Error retrieving Discount list — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-}; // ----getDiscount
-
-exports.getDiscountById = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error searching for Discount id — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getDiscountById
+};
 
-exports.updateDiscount = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error updated Discount — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----updateDiscount
+};
 
-exports.deleteDiscount = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error deleted Discount — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deleteDiscount
+};
+
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

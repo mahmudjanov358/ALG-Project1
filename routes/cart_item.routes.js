@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const admin = Router();
+const cart_item = Router();
 
 const {} = require("../controllers/admin.controller");
 
-module.exports = { admin };
+module.exports = { cart_item };

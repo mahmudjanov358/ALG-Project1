@@ -1,90 +1,73 @@
-const { Order } = require("../models/orderSchema"); // ----Order Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postOrder = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
-    const { product_id, order_details_id } = req.body;
-    const newOrder = await Order({
-      product_id,
-      order_details_id,
-    });
-    await newOrder.save();
-    return res.status(200).json({
-      success: true,
-      message: "Order created successfully!",
-    });
   } catch (error) {
-    console.error("Error creating Order — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postOrder
+};
 
-exports.getOrder = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
-    const order = await Order.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Order list!",
-      orders: order,
-    });
   } catch (error) {
-    console.error("Error retrieving Order list — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getOrder
+};
 
-exports.getOrderById = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
-    const orderId = req.params.id;
-    const order = await Order.findById(orderId);
-
-    if (!order) {
-      return res.status(404).json({
-        success: false,
-        message: "Order not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Order found!",
-        order: order,
-      });
-    }
   } catch (error) {
-    console.error("Error searching for Order id — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getOrderById
+};
 
-exports.deleteOrder = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
-    const orderId = req.params.id;
-    const deletedOrder = await Order.findByIdAndDelete(orderId);
-
-    if (!deletedOrder) {
-      return res.status(404).json({
-        success: false,
-        message: "Order not found!",
-      });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Order deleted successfully!",
-      });
-    }
   } catch (error) {
-    console.error("Error deleted Order — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deleteOrder
+};
+
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

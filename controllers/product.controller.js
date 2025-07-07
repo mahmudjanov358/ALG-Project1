@@ -1,62 +1,73 @@
-const { Product } = require("../models/productSchema"); // ----Product Model
+const { Admin } = require("../models/adminSchema");
 
-exports.postProduct = async (req, res) => {
+// ----postAdmin
+exports.postAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error creating Product — ", error);
+    console.error("Admin yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----postProduct
+};
 
-exports.getProduct = async (req, res) => {
-  try {
-    const product = await Product.find({});
-    return res.status(200).json({
-      success: true,
-      message: "Product list!",
-      products: product,
-    });
-  } catch (error) {
-    console.error("Error retrieving Product list — ", error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error!",
-    });
-  }
-}; // ----getProduct
-
-exports.getProductById = async (req, res) => {
+// ----loginAdmin
+exports.loginAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error searching for Product id — ", error);
+    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----getProductById
+};
 
-exports.updateProduct = async (req, res) => {
+// ----getAdmin
+exports.getAdmin = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error updated Product — ", error);
+    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----updateProduct
+};
 
-exports.deleteProduct = async (req, res) => {
+// ----getAdminById
+exports.getAdminById = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Error deleted Product — ", error);
+    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
-      message: "Internal Server Error!",
+      message: "Ichki Server Xatosi!",
     });
   }
-}; // ----deleteProduct
+};
+
+// ----updateAdmin
+exports.updateAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};
+
+// ----deleteAdmin
+exports.deleteAdmin = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Ichki Server Xatosi!",
+    });
+  }
+};

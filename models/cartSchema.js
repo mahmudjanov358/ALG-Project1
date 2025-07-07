@@ -3,8 +3,8 @@ const { User } = require("./userSchema");
 const { Status } = require("./statusSchema");
 
 const cartSchema = new Schema({
-  user_id: { type: Schema.Types.ObjectId, ref: User },
-  status_id: { type: Schema.Types.ObjectId, ref: Status },
+  user_id: { type: Schema.Types.ObjectId, ref: User, required: true },
+  status_id: { type: Schema.Types.ObjectId, ref: Status, required: true },
 });
 
 const Cart = model("Cart", cartSchema);
