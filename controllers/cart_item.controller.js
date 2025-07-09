@@ -36,18 +36,6 @@ exports.getCart_ItemById = async (req, res) => {
   }
 };
 
-// ----updateCart_Item
-exports.updateCart_Item = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Cart_Itemni o'zgartirishda Xatolik! — ", error.message);
-    return res.status(500).json({
-      success: false,
-      message: "Ichki Server Xatosi!",
-    });
-  }
-};
-
 // ----deleteCart_Item
 exports.deleteCart_Item = async (req, res) => {
   try {

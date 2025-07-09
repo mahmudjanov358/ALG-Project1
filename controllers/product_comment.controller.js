@@ -1,10 +1,10 @@
-const { Admin } = require("../models/adminSchema");
+const { Product_Comment } = require("../models/product_commentSchema");
 
-// ----postAdmin
-exports.postAdmin = async (req, res) => {
+// ----postProduct_Comment
+exports.postProduct_Comment = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Admin yaratilishida Xatolik! — ", error.message);
+    console.error("Product_Comment yaratilishida Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
       message: "Ichki Server Xatosi!",
@@ -12,11 +12,14 @@ exports.postAdmin = async (req, res) => {
   }
 };
 
-// ----loginAdmin
-exports.loginAdmin = async (req, res) => {
+// ----getProduct_Comment
+exports.getProduct_Comment = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Admin tizmiga kirishida Xatolik! — ", error.message);
+    console.error(
+      "Product_Commentlar ro'yhatini olishda Xatolik! — ",
+      error.message
+    );
     return res.status(500).json({
       success: false,
       message: "Ichki Server Xatosi!",
@@ -24,11 +27,14 @@ exports.loginAdmin = async (req, res) => {
   }
 };
 
-// ----getAdmin
-exports.getAdmin = async (req, res) => {
+// ----getProduct_CommentById
+exports.getProduct_CommentById = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Adminlar ro'yhatini olishda Xatolik! — ", error.message);
+    console.error(
+      "Product_Comment ID bo'yicha olishda Xatolik! — ",
+      error.message
+    );
     return res.status(500).json({
       success: false,
       message: "Ichki Server Xatosi!",
@@ -36,11 +42,14 @@ exports.getAdmin = async (req, res) => {
   }
 };
 
-// ----getAdminById
-exports.getAdminById = async (req, res) => {
+// ----updateProduct_Comment
+exports.updateProduct_Comment = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Admin ID bo'yicha olishda Xatolik! — ", error.message);
+    console.error(
+      "Product_Commentni o'zgartirishda Xatolik! — ",
+      error.message
+    );
     return res.status(500).json({
       success: false,
       message: "Ichki Server Xatosi!",
@@ -48,23 +57,11 @@ exports.getAdminById = async (req, res) => {
   }
 };
 
-// ----updateAdmin
-exports.updateAdmin = async (req, res) => {
+// ----deleteProduct_Comment
+exports.deleteProduct_Comment = async (req, res) => {
   try {
   } catch (error) {
-    console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
-    return res.status(500).json({
-      success: false,
-      message: "Ichki Server Xatosi!",
-    });
-  }
-};
-
-// ----deleteAdmin
-exports.deleteAdmin = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Adminni o'chirishda Xatolik! — ", error.message);
+    console.error("Product_Commentni o'chirishda Xatolik! — ", error.message);
     return res.status(500).json({
       success: false,
       message: "Ichki Server Xatosi!",
