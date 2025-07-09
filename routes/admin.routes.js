@@ -5,8 +5,8 @@ module.exports = Router()
    * @swagger
    * /admin/post:
    *   post:
-   *     summary: Adminlarni yaratish
    *     tags: [Admin]
+   *     summary: Adminlarni yaratish
    *     description: Adminlar yaratish jarayoni
    *     requestBody:
    *       required: true
@@ -36,24 +36,24 @@ module.exports = Router()
    *       500:
    *         description: Ichki Server Error
    */
-  .post("/post", admin.postAdmin)
+  .post("/post", admin.postAdmin) // ----postAdmin
 
   /**
    * @swagger
    * /admin/login:
    *   post:
-   *     summary: Adminni tizimga kiritish
    *     tags: [Admin]
+   *     summary: Adminni tizimga kiritish
    *     description: Adminni tizimga kiritish jarayoni
    */
-  .post("/login", admin.loginAdmin)
+  .post("/login", admin.loginAdmin) // ----loginAdmin
 
   /**
    * @swagger
    * /admin/get:
    *   get:
-   *     summary: Adminlarni ko'rish
    *     tags: [Admin]
+   *     summary: Adminlarni ko'rish
    *     description: Adminlar ro'yhatini ko'rish
    *     responses:
    *       200:
@@ -61,34 +61,34 @@ module.exports = Router()
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .get("/get", admin.getAdmin)
+  .get("/get", admin.getAdmin) // ----getAdmin
 
   /**
    * @swagger
    * /admin/getById/{id}:
    *   get:
-   *     summary: Adminni ID bo'yicha olish
    *     tags: [Admin]
+   *     summary: Adminni ID bo'yicha olish
    *     description: Adminni ID bo'yicha olish jarayoni
    */
-  .get("/getById/:id", admin.getAdminById)
+  .get("/getById/:id", admin.getAdminById) // ----getAdminById
 
   /**
    * @swagger
    * /admin/update/{id}:
    *   put:
-   *     summary: Adminni ID bo'yicha yangilash
    *     tags: [Admin]
+   *     summary: Adminni ID bo'yicha yangilash
    *     description: Adminni ID bo'yicha yangilash jarayoni
    */
-  .put("/update/:id", admin.updateAdmin)
+  .put("/update/:id", admin.updateAdmin) // ----updateAdmin
 
   /**
    * @swagger
    * /admin/delete/{id}:
    *   delete:
-   *     summary: Adminni ID bo'yicha o'chirish
    *     tags: [Admin]
+   *     summary: Adminni ID bo'yicha o'chirish
    *     description: Adminni ID bo'yicha o'chirish jarayoni
    */
-  .delete("/delete/:id", admin.deleteAdmin);
+  .delete("/delete/:id", admin.deleteAdmin); // ----deleteAdmin

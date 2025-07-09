@@ -5,48 +5,48 @@ module.exports = Router()
    * @swagger
    * /user/post:
    *   post:
-   *     summary: User yaratish
    *     tags: [User]
+   *     summary: User yaratish
    *     description: User yaratish jarayoni
    */
-  .post("/post", user.postUser)
+  .post("/post", user.postUser) // ----postUser
 
   /**
    * @swagger
    * /user/get:
    *   get:
-   *     summary: Userlar ko'rish
    *     tags: [User]
+   *     summary: Userlar ko'rish
    *     description: Userlar ro'yhatini ko'rish
    */
-  .get("/get", user.getUser)
+  .get("/get", user.getUser) // ----getUser
 
   /**
    * @swagger
    * /user/getById/{id}:
    *   get:
-   *     summary: Userni ID bo'yicha olish
    *     tags: [User]
+   *     summary: Userni ID bo'yicha olish
    *     description: Userni ID bo'yicha olish jarayoni
    */
-  .get("/getById/:id", user.getUserById)
+  .get("/getById/:id", user.getUserById) // ----getUserById
 
   /**
    * @swagger
    * /user/update/{id}:
    *   put:
-   *     summary: Userni ID bo'yicha  yangilash
    *     tags: [User]
+   *     summary: Userni ID bo'yicha  yangilash
    *     description: Userni ID bo'yicha yangilash jarayoni
    */
-  .put("/update/:id", user.updateUser)
+  .put("/update/:id", user.updateUser) // ----updateUser
 
   /**
    * @swagger
    * /user/delete/{id}:
    *   delete:
-   *     summary: Userni ID bo'yicha o'chirish
    *     tags: [User]
+   *     summary: Userni ID bo'yicha o'chirish
    *     description: Userni ID bo'yicha o'chirish jarayoni
    */
-  .delete("/delete/:id", user.deleteUser);
+  .delete("/delete/:id", user.deleteUser); // ----deleteUser
