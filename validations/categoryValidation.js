@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi"); // ----Joi Library
 
 exports.postCategoryValidationSchema = Joi.object({
   name: Joi.string().required().min(2).max(30).messages({

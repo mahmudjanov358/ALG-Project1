@@ -1,4 +1,4 @@
-const { Status } = require("../models/statusSchema");
+const { Status } = require("../models/statusSchema"); // ----Status
 
 // ----postStatus
 exports.postStatus = async (req, res) => {
@@ -44,7 +44,6 @@ exports.getStatusById = async (req, res) => {
   try {
     const statusId = req.params.id;
     const status = await Status.findById(statusId);
-
     if (!status) {
       return res.status(404).json({
         success: false,
@@ -76,7 +75,6 @@ exports.updateStatus = async (req, res) => {
       { status },
       { new: true }
     );
-
     if (!updatedStatus) {
       return res.status(404).json({
         success: false,
@@ -102,7 +100,6 @@ exports.deleteStatus = async (req, res) => {
   try {
     const statusId = req.params.id;
     const status = await Status.findByIdAndDelete(statusId);
-
     if (!status) {
       return res.status(404).json({
         success: false,

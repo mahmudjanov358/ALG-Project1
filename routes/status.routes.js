@@ -1,6 +1,6 @@
-const { Router } = require("express");
-const status = require("../controllers/status.controller");
-module.exports = Router()
+const { Router } = require("express"); // ----Express
+const status = require("../controllers/status.controller"); // ----Status Controller
+module.exports = Router() // ----Router
   /**
    * @swagger
    * /status/post:

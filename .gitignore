@@ -1,2 +1,37 @@
-node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
 .env
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Optional npm cache directory
+.npm
+
+# Swagger generated files (if any)
+swagger-output.json
+
+# VSCode settings
+.vscode/
+.vscode/*
+
+# Misc
+*.tgz
+*.bak
+*.tmp
+
+# MongoDB database files (if any local)
+*.local.db
+*.local.db-journal
+
+# End Generation Here

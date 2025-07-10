@@ -1,6 +1,6 @@
-const { Admin } = require("../models/adminSchema");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const { Admin } = require("../models/adminSchema"); // ----Admin
+const bcrypt = require("bcrypt"); // ----Bcrypt
+const jwt = require("jsonwebtoken"); // ----Jsonwebtoken
 
 // ----postAdmin
 exports.postAdmin = async (req, res) => {
@@ -8,7 +8,6 @@ exports.postAdmin = async (req, res) => {
     const { name, lastName, email, password, is_active } = req.body;
     const existingAdmin = await Admin.findOne({ email });
     console.log(existingAdmin);
-
     if (!existingAdmin) {
       return res.status(400).json({
         success: false,
@@ -50,7 +49,6 @@ exports.loginAdmin = async (req, res) => {
         message: "Email topilmadi!",
       });
     }
-
     const passwordMatch = await bcrypt.compare(password, emailName.password);
     if (!passwordMatch) {
       return res.status(400).json({
@@ -58,7 +56,6 @@ exports.loginAdmin = async (req, res) => {
         message: "Email yoki parol xato!",
       });
     }
-
     const token = jwt.sign({ email: emailName.email }, "secret");
     return res.json({
       message: "Token",
@@ -96,7 +93,6 @@ exports.getAdminById = async (req, res) => {
   try {
     const adminId = req.params.id;
     const admin = await Admin.findById(adminId);
-
     if (!admin) {
       return res.status(404).json({
         success: false,
@@ -128,7 +124,6 @@ exports.updateAdmin = async (req, res) => {
       { name, lastName, email, password, is_active },
       { new: true }
     );
-
     if (!updatedAdmin) {
       return res.status(404).json({
         success: false,
@@ -154,7 +149,6 @@ exports.deleteAdmin = async (req, res) => {
   try {
     const adminId = req.params.id;
     const admin = await Admin.findByIdAndDelete(adminId);
-
     if (!admin) {
       return res.status(404).json({
         success: false,

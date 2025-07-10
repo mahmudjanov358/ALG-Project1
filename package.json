@@ -7,10 +7,22 @@
     "go": "nodemon index.js",
     "start": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Bcrypt",
+    "Body-Parser",
+    "Cors",
+    "Dotenv",
+    "Express",
+    "Joi",
+    "Jsonwebtoken",
+    "Mongoose",
+    "Nodemon",
+    "Swagger-Jsdoc",
+    "Swagger-Ui-Express"
+  ],
+  "author": "ABDULLOH MAHMUDJANOV",
   "license": "ISC",
-  "description": "",
+  "description": "Backend uchun ExpressJS va MongoDBdan foydalanilgan, API Swagger bilan yozilgan Project",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",

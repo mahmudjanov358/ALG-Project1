@@ -1,6 +1,6 @@
-const { Router } = require("express");
-const discount = require("../controllers/discount.controller");
-module.exports = Router()
+const { Router } = require("express"); // ----Express
+const discount = require("../controllers/discount.controller"); // ----Discount Controller
+module.exports = Router() // ----Router
   /**
    * @swagger
    * /discount/post:

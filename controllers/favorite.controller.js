@@ -1,4 +1,4 @@
-const { Favorite } = require("../models/favoriteSchema");
+const { Favorite } = require("../models/favoriteSchema"); // ----Favorite
 
 // ----postFavorite
 exports.postFavorite = async (req, res) => {
@@ -45,7 +45,6 @@ exports.getFavoriteById = async (req, res) => {
   try {
     const favoriteId = req.params.id;
     const favorite = await Favorite.findById(favoriteId);
-
     if (!favorite) {
       return res.status(404).json({
         success: false,
@@ -72,7 +71,6 @@ exports.deleteFavorite = async (req, res) => {
   try {
     const favoriteId = req.params.id;
     const favorite = await Favorite.findByIdAndDelete(favoriteId);
-
     if (!favorite) {
       return res.status(404).json({
         success: false,

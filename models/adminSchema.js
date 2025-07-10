@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose"); // ----Mongoose
 
 const adminSchema = new Schema({
   name: { type: String, required: true, trim: true },
@@ -6,7 +6,7 @@ const adminSchema = new Schema({
   email: { type: String, required: true, unique: true, trim: true },
   password: { type: String, required: true },
   is_active: { type: Boolean },
-});
+}); // ----adminSchema
 
-const Admin = model("Admin", adminSchema);
-module.exports = { Admin };
+const Admin = model("Admin", adminSchema); // ----Admin
+module.exports = { Admin }; // ----Admin

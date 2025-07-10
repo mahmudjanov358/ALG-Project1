@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi"); // ----Joi Library
 
 exports.postCartValidationSchema = Joi.object({
   user_id: Joi.string().required().messages({
@@ -9,4 +9,4 @@ exports.postCartValidationSchema = Joi.object({
     "string.base": "Status string type bo'lishi lozim!",
     "any.required": "Status kiritilishi shart!",
   }),
-});
+}); // ----postCartValidationSchema

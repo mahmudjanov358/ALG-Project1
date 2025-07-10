@@ -1,4 +1,4 @@
-const { Payment } = require("../models/paymentSchema");
+const { Payment } = require("../models/paymentSchema"); // ----Payment
 
 // ----postPayment
 exports.postPayment = async (req, res) => {
@@ -44,7 +44,6 @@ exports.getPaymentById = async (req, res) => {
   try {
     const paymentId = req.params.id;
     const payment = await Payment.findById(paymentId);
-
     if (!payment) {
       return res.status(404).json({
         success: false,
@@ -76,7 +75,6 @@ exports.updatePayment = async (req, res) => {
       { name },
       { new: true }
     );
-
     if (!updatedPayment) {
       return res.status(404).json({
         success: false,
@@ -102,7 +100,6 @@ exports.deletePayment = async (req, res) => {
   try {
     const paymentId = req.params.id;
     const payment = await Payment.findByIdAndDelete(paymentId);
-
     if (!payment) {
       return res.status(404).json({
         success: false,

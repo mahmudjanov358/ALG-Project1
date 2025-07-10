@@ -1,4 +1,4 @@
-const { Order } = require("../models/orderSchema");
+const { Order } = require("../models/orderSchema"); // ----Order
 
 // ----postOrder
 exports.postOrder = async (req, res) => {
@@ -45,7 +45,6 @@ exports.getOrderById = async (req, res) => {
   try {
     const orderId = req.params.id;
     const order = await Order.findById(orderId);
-
     if (!order) {
       return res.status(404).json({
         success: false,
@@ -71,7 +70,6 @@ exports.deleteOrder = async (req, res) => {
   try {
     const orderId = req.params.id;
     const order = await Order.findByIdAndDelete(orderId);
-
     if (!order) {
       return res.status(404).json({
         success: false,

@@ -1,6 +1,6 @@
-const { Schema, model } = require("mongoose");
-const { Category } = require("./categorySchema");
-const { Discount } = require("./discountSchema");
+const { Schema, model } = require("mongoose"); // ----Mongoose
+const { Category } = require("./categorySchema"); // ----Category
+const { Discount } = require("./discountSchema"); // ----Discount
 
 const productSchema = new Schema({
   name: { type: String, required: true, trim: true },
@@ -10,7 +10,7 @@ const productSchema = new Schema({
   count: { type: String, required: true },
   category_id: { type: Schema.Types.ObjectId, ref: Category, required: true },
   discount_id: { type: Schema.Types.ObjectId, ref: Discount, required: true },
-});
+}); // ----productSchema
 
-const Product = model("Product", productSchema);
-module.exports = { Product };
+const Product = model("Product", productSchema); // ----Product
+module.exports = { Product }; // ----Product

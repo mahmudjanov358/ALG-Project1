@@ -1,6 +1,6 @@
-const { Router } = require("express");
-const favorite = require("../controllers/favorite.controller");
-module.exports = Router()
+const { Router } = require("express"); // ----Express
+const favorite = require("../controllers/favorite.controller"); // ----Favorite Controller
+module.exports = Router() // ----Router
   /**
    * @swagger
    * /favorite/post:

@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi"); // ----Joi Library
 
 exports.postFavoriteValidationSchema = Joi.object({
   user_id: Joi.string().required().messages({
@@ -9,4 +9,4 @@ exports.postFavoriteValidationSchema = Joi.object({
     "string.base": "Product ID string bo'lishi kerak!",
     "any.required": "Product ID kiritilishi shart!",
   }),
-});
+}); // ----postFavoriteValidationSchema

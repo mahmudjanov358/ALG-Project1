@@ -1,6 +1,6 @@
-const { Router } = require("express");
-const product_comment = require("../controllers/product_comment.controller");
-module.exports = Router()
+const { Router } = require("express"); // ----Express
+const product_comment = require("../controllers/product_comment.controller"); // ----Product_Comment Controller
+module.exports = Router() // ----Router
   /**
    * @swagger
    * /product_comment/post:

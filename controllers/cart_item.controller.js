@@ -1,4 +1,4 @@
-const { Cart_Item } = require("../models/cart_itemSchema");
+const { Cart_Item } = require("../models/cart_itemSchema"); // ----Cart_Item
 
 // ----postCart_Item
 exports.postCart_Item = async (req, res) => {
@@ -47,7 +47,6 @@ exports.getCart_ItemById = async (req, res) => {
     const cart_item = await Cart_Item.findById(cart_itemId).populate(
       "cart_id product_id"
     );
-
     if (!cart_item) {
       return res.status(404).json({
         success: false,
@@ -74,7 +73,6 @@ exports.deleteCart_Item = async (req, res) => {
   try {
     const cart_itemId = req.params.id;
     const cart_item = await Cart_Item.findByIdAndDelete(cart_itemId);
-
     if (!cart_item) {
       return res.status(404).json({
         success: false,
