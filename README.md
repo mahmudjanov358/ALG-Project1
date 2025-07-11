@@ -44,8 +44,9 @@ Bu loyiha **Project1** asosan amaliy ishlar uchun ishlab chiqilgan. Loyiha Expre
 
    ```bash
    1  npm run go
-   2  npm run start
-   3  node index.js
+   2  npm run dev
+   3  npm run start
+   4  node index.js
    ```
 
 4. **Modelslar:**
