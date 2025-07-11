@@ -41,12 +41,33 @@ Bu loyiha **Project1** asosan amaliy ishlar uchun ishlab chiqilgan. Loyiha Expre
    ```
 
 3. **Serverni ishga tushurish:**
+
    ```bash
    1  npm run go
    2  npm run start
    3  node index.js
    ```
 
-## Modelslar — 1-Admin; 2-Cart; 3-Cart_Item; 4-Category; 5-Discount; 6-Favorite; 7-Order; 8-Order_Details; 9-Payment; 10-Product; 11-Product_Comment; 12-Product_Reviews; 13-Product_Variant; 14-Status; 15-User
+4. **Modelslar:**
 
-Swagger UI orqali barcha endpointlarni ko‘rish va test qilish uchun quyidagi manzilga o‘ting: http://localhost:2000
+   ```bash
+    1 Admin
+    2 Cart
+    3 Cart_Item
+    4 Category
+    5 Ddiscount
+    6 Favorite
+    7 Order
+    8 Order_Details
+    9 Payment
+    10 Product
+    11 Product_Comment
+    12 Product_Reviews
+    13 Product_Variant
+    14 Status
+    15 User
+   ```
+
+## Swagger API hujjatlari - swagger-jsdoc & swagger-ui-express bilan
+
+Swagger UI orqali barcha endpointlarni ko‘rish va test qilish uchun quyidagi manzilga o‘ting: http://localhost:2000/api-docs
