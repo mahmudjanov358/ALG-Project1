@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 module.exports = model(
-  "Admin",
+  "admins",
   new Schema({
     name: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
@@ -8,4 +8,4 @@ module.exports = model(
     password: { type: String, required: true },
     is_active: { type: Boolean },
   })
-); // ----adminSchema
+); // ----adminsSchema

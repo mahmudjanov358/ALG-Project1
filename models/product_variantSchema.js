@@ -20,13 +20,12 @@ const colors = [
   "Teal",
 ];
 module.exports = model(
-  "Product_Variant",
+  "product_variant",
   new Schema({
-    product_id: { type: Schema.Types.ObjectId, ref: "Product" },
+    product_id: { type: Schema.Types.ObjectId, ref: "product" },
     price: { type: Number, required: true },
     color: {
       type: String,
-      required: true,
       trim: true,
       enum: colors,
     },

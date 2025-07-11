@@ -1,6 +1,6 @@
 const Joi = require("joi"); // ----Joi Library
 
-exports.postOrder_DetailsValidationSchema = Joi.object({
+exports.postOrderValidationSchema = Joi.object({
   product_id: Joi.string().required().messages({
     "string.base": "Product ID string ko'rinishida bo'lishi kerak!",
     "any.required": "Product ID bo'sh kiritilishi kerak!",
@@ -9,10 +9,9 @@ exports.postOrder_DetailsValidationSchema = Joi.object({
     "string.base": "Order Details ID string ko'rinishida bo'lishi kerak!",
     "any.required": "Order Details ID bo'sh kiritilishi kerak!",
   }),
-}); // ----postOrder_DetailsValidationSchema
+}); // ----postOrderValidationSchema
 
-exports.updateOrder_DetailsValidationSchema =
-  exports.postOrder_DetailsValidationSchema.fork(
-    Object.keys(exports.postOrder_DetailsValidationSchema.describe().keys),
-    (schema) => schema.optional()
-  ); // ----updateOrder_DetailsValidationSchema
+exports.updateOrderValidationSchema = exports.postOrderValidationSchema.fork(
+  Object.keys(exports.postOrderValidationSchema.describe().keys),
+  (schema) => schema.optional()
+); // ----updateOrderValidationSchema

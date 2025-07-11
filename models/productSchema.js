@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose"); // ----Mongoose
 module.exports = model(
-  "Product",
+  "product",
   new Schema({
     name: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
@@ -9,12 +9,12 @@ module.exports = model(
     count: { type: Number, required: true },
     category_id: {
       type: Schema.Types.ObjectId,
-      ref: "Category",
+      ref: "category",
       required: true,
     },
     discount_id: {
       type: Schema.Types.ObjectId,
-      ref: "Discount",
+      ref: "discount",
       required: true,
     },
   })

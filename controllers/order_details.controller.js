@@ -48,7 +48,9 @@ exports.getOrder_Details = async (req, res) => {
 exports.getOrder_DetailsById = async (req, res) => {
   try {
     const order_detailsId = req.params.id;
-    const order_details = await Order_Details.findById(order_detailsId);
+    const order_details = await Order_Details.findById(
+      order_detailsId
+    ).populate("payment_id user_id");
     if (!order_details) {
       return res.status(404).json({
         success: false,

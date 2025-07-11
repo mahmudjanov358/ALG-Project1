@@ -1,6 +1,6 @@
 const { Router } = require("express"); // ----Express
 const admin = require("../controllers/admin.controller"); // ----Admin Controller
-const { validationsResultate } = require("../middlewares/validationsResult"); // ----Validations Result
+const { validationsResultate } = require("../middlewares/validationsResultate"); // ----Validations Resultate
 const adminValidations = require("../validations/adminValidation"); // ----Admin Validations
 module.exports = Router() // ----Router
   /**

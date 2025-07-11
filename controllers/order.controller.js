@@ -44,7 +44,9 @@ exports.getOrder = async (req, res) => {
 exports.getOrderById = async (req, res) => {
   try {
     const orderId = req.params.id;
-    const order = await Order.findById(orderId);
+    const order = await Order.findById(orderId).populate(
+      "product_id order_details_id"
+    );
     if (!order) {
       return res.status(404).json({
         success: false,
@@ -54,6 +56,7 @@ exports.getOrderById = async (req, res) => {
       return res.status(200).json({
         success: true,
         message: "Order ma'lumotlari!",
+        order: order,
       });
     }
   } catch (error) {

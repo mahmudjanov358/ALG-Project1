@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 module.exports = model(
-  "Payment",
+  "payment",
   new Schema({
     name: { type: String, required: true, trim: true },
   })

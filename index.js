@@ -4,6 +4,7 @@ const cors = require("cors"); // ----Cors Library
 require("dotenv").config(); // ----Environment Variables Library
 const swaggerJsdoc = require("swagger-jsdoc"); // ----Swagger-Jsdoc Library
 const swaggerUi = require("swagger-ui-express"); // ----Swagger-Ui-Express Library
+const swaggerOptions = require("./config/swaggerOptions"); // ----Swagger Options
 
 const app = express(); // ----App Server
 
@@ -21,84 +22,6 @@ async function connectToDB() {
 }
 connectToDB(); // ----Database connectToDB
 
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: "3.0.0",
-    info: {
-      title: "Express API bilan Swagger",
-      version: "1.0.0",
-      description: "Swagger yordamida API hujjatlari",
-    },
-    servers: [
-      {
-        url: "http://localhost:2000",
-      },
-    ],
-    tags: [
-      {
-        name: "Product_Reviews",
-        description: "Product_Reviews bo'limi bilan ishlash",
-      }, // ----Product_Reviews
-      {
-        name: "Product_Variant",
-        description: "Product_Variant bo'limi bilan ishlash",
-      }, // ----Product_Variant
-      {
-        name: "Cart_Item",
-        description: "Cart_Item bo'limi bilan ishlash",
-      }, // ----Cart_Item
-      {
-        name: "Status",
-        description: "Status bo'limi bilan ishlash",
-      }, // ----Status
-      {
-        name: "Product_Comment",
-        description: "Product_Comment bo'limi bilan ishlash",
-      }, // ----Product_Comment
-      {
-        name: "Favorite",
-        description: "Favorite bo'limi bilan ishlash",
-      }, // ----Favorite
-      {
-        name: "Payment",
-        description: "Payment bo'limi bilan ishlash",
-      }, // ----Payment
-      {
-        name: "Order",
-        description: "Order bo'limi bilan ishlash",
-      },
-      {
-        name: "Order_Details",
-        description: "Order_Details bo'limi bilan ishlash",
-      }, // ----Order_Details
-      {
-        name: "Cart",
-        description: "Cart bo'limi bilan ishlash",
-      }, // ----Cart
-      {
-        name: "Discount",
-        description: "Discount bo'limi bilan ishlash",
-      }, // ----Discount
-      {
-        name: "Category",
-        description: "Category bo'limi bilan ishlash",
-      }, // ----Category
-      {
-        name: "Product",
-        description: "Product bo'limi bilan ishlash",
-      }, // ----Product
-      {
-        name: "Admin",
-        description: "Admin bo'limi bilan ishlash",
-      }, // ----Admin
-      {
-        name: "User",
-        description: "User bo'limi bilan ishlash",
-      }, // ----User
-    ],
-  },
-  apis: ["./routes/*.js"],
-}; // ----swaggerOptions
 // ----swaggerDocs
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));

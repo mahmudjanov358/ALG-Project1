@@ -44,7 +44,7 @@ exports.getCart = async (req, res) => {
 exports.getCartById = async (req, res) => {
   try {
     const cartId = req.params.id;
-    const cart = await Cart.findById(cartId);
+    const cart = await Cart.findById(cartId).populate("user_id status_id");
     if (!cart) {
       return res.status(404).json({
         success: false,

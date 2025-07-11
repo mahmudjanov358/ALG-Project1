@@ -44,7 +44,9 @@ exports.getFavorite = async (req, res) => {
 exports.getFavoriteById = async (req, res) => {
   try {
     const favoriteId = req.params.id;
-    const favorite = await Favorite.findById(favoriteId);
+    const favorite = await Favorite.findById(favoriteId).populate(
+      "user_id product_id"
+    );
     if (!favorite) {
       return res.status(404).json({
         success: false,

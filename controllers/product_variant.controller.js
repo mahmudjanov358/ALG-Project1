@@ -48,7 +48,9 @@ exports.getProduct_Variant = async (req, res) => {
 exports.getProduct_VariantById = async (req, res) => {
   try {
     const product_variantId = req.params.id;
-    const product_variant = await Product_Variant.findById(product_variantId);
+    const product_variant = await Product_Variant.findById(
+      product_variantId
+    ).populate("product_id");
     if (!product_variant) {
       return res.status(404).json({
         success: false,

@@ -105,6 +105,11 @@ exports.deleteStatus = async (req, res) => {
         success: false,
         message: "Status muvaffaqiyatli o'chirildi!",
       });
+    } else {
+      return res.status(200).json({
+        success: true,
+        message: "Status muvaffaqiyatli o'chirildi!",
+      });
     }
   } catch (error) {
     console.error("Statusni o'chirishda Xatolik! — ", error.message);

@@ -48,7 +48,9 @@ exports.getProduct_Comment = async (req, res) => {
 exports.getProduct_CommentById = async (req, res) => {
   try {
     const product_commentId = req.params.id;
-    const product_comment = await Product_Comment.findById(product_commentId);
+    const product_comment = await Product_Comment.findById(
+      product_commentId
+    ).populate("user_id product_id");
     if (!product_comment) {
       return res.status(404).json({
         success: false,

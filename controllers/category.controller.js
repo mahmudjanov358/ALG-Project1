@@ -28,7 +28,7 @@ exports.getCategory = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "Categorylar ro'yhati!",
-      categorys: category,
+      categories: category,
     });
   } catch (error) {
     console.error("Categorylar ro'yhatini olishda Xatolik! — ", error.message);
