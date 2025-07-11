@@ -39,7 +39,7 @@ module.exports = swaggerOptions = {
       {
         name: "Order",
         description: "Order bo'limi bilan ishlash",
-      },
+      }, // ----Order
       {
         name: "Order_Details",
         description: "Order_Details bo'limi bilan ishlash",
