@@ -1,9 +1,11 @@
 const { Router } = require("express"); // ----Express
 const admin = require("../controllers/admin.controller"); // ----Admin Controller
+const { validationsResultate } = require("../middlewares/validationsResult"); // ----Validations Result
+const adminValidations = require("../validations/adminValidation"); // ----Admin Validations
 module.exports = Router() // ----Router
   /**
    * @swagger
-   * /admin/post:
+   * /admin/:
    *   post:
    *     tags: [Admin]
    *     summary: Adminlarni yaratish
@@ -17,26 +19,30 @@ module.exports = Router() // ----Router
    *             properties:
    *               name:
    *                 type: string
-   *                 description: Admin Name
+   *                 description: Admin nomi
    *               lastName:
    *                 type: string
-   *                 description: Admin Last Name
+   *                 description: Admin familiyasi
    *               email:
    *                 type: string
-   *                 description: Admin Email
+   *                 description: Admin emaili
    *               password:
    *                 type: string
-   *                 description: Admin Password
+   *                 description: Admin paroli
    *               is_active:
-   *                 type: string
-   *                 description: Admin Activele
+   *                 type: boolean
+   *                 description: Admin aktivligi
    *     responses:
    *       200:
    *         description: Admin muvaffaqiyatli yaratildi
    *       500:
-   *         description: Ichki Server Error
+   *         description: Ichki Server Xatosi
    */
-  .post("/post", admin.postAdmin) // ----postAdmin
+  .post(
+    "/",
+    validationsResultate(adminValidations.postAdminValidationSchema),
+    admin.postAdmin
+  ) // ----postAdmin
 
   /**
    * @swagger
@@ -54,10 +60,10 @@ module.exports = Router() // ----Router
    *             properties:
    *               email:
    *                 type: string
-   *                 description: Admin Email
+   *                 description: Admin emaili
    *               password:
    *                 type: string
-   *                 description: Admin Password
+   *                 description: Admin paroli
    *     responses:
    *       200:
    *         description: Admin muvaffaqiyatli tizimga kiritildi
@@ -66,11 +72,15 @@ module.exports = Router() // ----Router
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .post("/login", admin.loginAdmin) // ----loginAdmin
+  .post(
+    "/login",
+    validationsResultate(adminValidations.loginAdminValidationSchema),
+    admin.loginAdmin
+  ) // ----loginAdmin
 
   /**
    * @swagger
-   * /admin/get:
+   * /admin/:
    *   get:
    *     tags: [Admin]
    *     summary: Adminlarni ko'rish
@@ -81,11 +91,11 @@ module.exports = Router() // ----Router
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .get("/get", admin.getAdmin) // ----getAdmin
+  .get("/", admin.getAdmin) // ----getAdmin
 
   /**
    * @swagger
-   * /admin/getById/{id}:
+   * /admin/{id}:
    *   get:
    *     tags: [Admin]
    *     summary: Adminni ID bo'yicha olish
@@ -103,11 +113,11 @@ module.exports = Router() // ----Router
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .get("/getById/:id", admin.getAdminById) // ----getAdminById
+  .get("/:id", admin.getAdminById) // ----getAdminById
 
   /**
    * @swagger
-   * /admin/update/{id}:
+   * /admin/{id}:
    *   put:
    *     tags: [Admin]
    *     summary: Adminni ID bo'yicha yangilash
@@ -126,19 +136,19 @@ module.exports = Router() // ----Router
    *             properties:
    *               name:
    *                 type: string
-   *                 description: Admin Name
+   *                 description: Admin nomi
    *               lastName:
    *                 type: string
-   *                 description: Admin Last Name
+   *                 description: Admin familiyasi
    *               email:
    *                 type: string
-   *                 description: Admin Email
+   *                 description: Admin emaili
    *               password:
    *                 type: string
-   *                 description: Admin Password
+   *                 description: Admin paroli
    *               is_active:
-   *                 type: string
-   *                 description: Admin Activele
+   *                 type: boolean
+   *                 description: Admin aktivligi
    *     responses:
    *       200:
    *         description: Admin muvaffaqiyatli yangilandi
@@ -147,11 +157,15 @@ module.exports = Router() // ----Router
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .put("/update/:id", admin.updateAdmin) // ----updateAdmin
+  .put(
+    "/:id",
+    validationsResultate(adminValidations.updateAdminValidationSchema),
+    admin.updateAdmin
+  ) // ----updateAdmin
 
   /**
    * @swagger
-   * /admin/delete/{id}:
+   * /admin/{id}:
    *   delete:
    *     tags: [Admin]
    *     summary: Adminni ID bo'yicha o'chirish
@@ -169,4 +183,4 @@ module.exports = Router() // ----Router
    *       500:
    *         description: Ichki Server Xatosi
    */
-  .delete("/delete/:id", admin.deleteAdmin); // ----deleteAdmin
+  .delete("/:id", admin.deleteAdmin); // ----deleteAdmin

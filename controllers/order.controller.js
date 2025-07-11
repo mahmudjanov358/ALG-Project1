@@ -1,4 +1,4 @@
-const { Order } = require("../models/orderSchema"); // ----Order
+const Order = require("../models/orderSchema"); // ----Order
 
 // ----postOrder
 exports.postOrder = async (req, res) => {

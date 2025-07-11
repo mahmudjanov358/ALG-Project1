@@ -1,4 +1,4 @@
-const { Product } = require("../models/productSchema"); // ----Product
+const Product = require("../models/productSchema"); // ----Product
 
 // ----postProduct
 exports.postProduct = async (req, res) => {

@@ -1,4 +1,4 @@
-const { Discount } = require("../models/discountSchema"); // ----Discount
+const Discount = require("../models/discountSchema"); // ----Discount
 
 // ----postDiscount
 exports.postDiscount = async (req, res) => {

@@ -1,4 +1,4 @@
-const { Favorite } = require("../models/favoriteSchema"); // ----Favorite
+const Favorite = require("../models/favoriteSchema"); // ----Favorite
 
 // ----postFavorite
 exports.postFavorite = async (req, res) => {

@@ -1,4 +1,4 @@
-const { Category } = require("../models/categorySchema"); // ----Category
+const Category = require("../models/categorySchema"); // ----Category
 
 // ----postCategory
 exports.postCategory = async (req, res) => {

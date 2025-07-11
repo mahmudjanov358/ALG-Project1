@@ -1,11 +1,34 @@
-const { Schema, model } = require("mongoose"); // ----Mongoose
-const { Product } = require("./productSchema"); // ----Product
-
-const product_variantSchema = new Schema({
-  product_id: { type: Schema.Types.ObjectId, ref: Product },
-  price: { type: BigInt, required: true },
-  color: { type: String, required: true },
-}); // ----product_variantSchema
-
-const Product_Variant = model("Product_Variant", product_variantSchema); // ----Product_Variant
-module.exports = { Product_Variant }; // ----Product_Variant
+const { Schema, model } = require("mongoose");
+const colors = [
+  "White",
+  "Black",
+  "Red",
+  "Blue",
+  "Green",
+  "Yellow",
+  "Purple",
+  "Gray",
+  "Brown",
+  "Pink",
+  "Orange",
+  "Gold",
+  "Silver",
+  "Bronze",
+  "Beige",
+  "Navy Blue",
+  "Maroon",
+  "Teal",
+];
+module.exports = model(
+  "Product_Variant",
+  new Schema({
+    product_id: { type: Schema.Types.ObjectId, ref: "Product" },
+    price: { type: Number, required: true },
+    color: {
+      type: String,
+      required: true,
+      trim: true,
+      enum: colors,
+    },
+  })
+); // ----product_variantSchema

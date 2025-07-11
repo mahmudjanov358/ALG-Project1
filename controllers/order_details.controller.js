@@ -1,4 +1,4 @@
-const { Order_Details } = require("../models/order_detailsSchema"); // ----Order_Details
+const Order_Details = require("../models/order_detailsSchema"); // ----Order_Details
 
 // ----postOrder_Details
 exports.postOrder_Details = async (req, res) => {

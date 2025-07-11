@@ -1,4 +1,4 @@
-const { Product_Variant } = require("../models/product_variantSchema"); // ----Product_Variant
+const Product_Variant = require("../models/product_variantSchema"); // ----Product_Variant
 
 // ----postProduct_Variant
 exports.postProduct_Variant = async (req, res) => {

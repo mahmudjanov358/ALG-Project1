@@ -1,10 +1,9 @@
-const { Schema, model } = require("mongoose"); // ----Mongoose
-
-const discountSchema = new Schema({
-  name: { type: String, required: true, trim: true },
-  description: { type: String, required: true },
-  percent: { type: BigInt, required: true },
-}); // ----discountSchema
-
-const Discount = model("Discount", discountSchema); // ----Discount
-module.exports = { Discount }; // ----Discount
+const { Schema, model } = require("mongoose");
+module.exports = model(
+  "Discount",
+  new Schema({
+    name: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true },
+    percent: { type: Number, required: true },
+  })
+); // ----discountSchema

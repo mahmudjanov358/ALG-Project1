@@ -1,4 +1,4 @@
-const { Cart_Item } = require("../models/cart_itemSchema"); // ----Cart_Item
+const Cart_Item = require("../models/cart_itemSchema"); // ----Cart_Item
 
 // ----postCart_Item
 exports.postCart_Item = async (req, res) => {

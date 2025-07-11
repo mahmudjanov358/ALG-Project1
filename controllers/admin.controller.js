@@ -1,4 +1,4 @@
-const { Admin } = require("../models/adminSchema"); // ----Admin
+const Admin = require("../models/adminSchema"); // ----Admin
 const bcrypt = require("bcrypt"); // ----Bcrypt
 const jwt = require("jsonwebtoken"); // ----Jsonwebtoken
 
@@ -8,13 +8,13 @@ exports.postAdmin = async (req, res) => {
     const { name, lastName, email, password, is_active } = req.body;
     const existingAdmin = await Admin.findOne({ email });
     console.log(existingAdmin);
-    if (!existingAdmin) {
+    if (existingAdmin) {
       return res.status(400).json({
         success: false,
         message: "Admin band etilgan!",
       });
     } else {
-      const hashPassword = bcrypt.hash(password, 10);
+      const hashPassword = await bcrypt.hash(password, 10);
       const newAdmin = new Admin({
         name,
         lastName,
@@ -56,9 +56,14 @@ exports.loginAdmin = async (req, res) => {
         message: "Email yoki parol xato!",
       });
     }
-    const token = jwt.sign({ email: emailName.email }, "secret");
-    return res.json({
-      message: "Token",
+    const token = jwt.sign(
+      { id: emailName._id, email: emailName.email, name: emailName.name },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+    return res.status(200).json({
+      success: true,
+      message: "Kirish muvaffaqiyatli!",
       token: token,
     });
   } catch (error) {
@@ -119,22 +124,23 @@ exports.updateAdmin = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, lastName, email, password, is_active } = req.body;
-    const updatedAdmin = await Admin.findByIdAndUpdate(
-      id,
-      { name, lastName, email, password, is_active },
-      { new: true }
-    );
+    const updateFields = { name, lastName, email, is_active };
+    if (password) {
+      updateFields.password = await bcrypt.hash(password, 10);
+    }
+    const updatedAdmin = await Admin.findByIdAndUpdate(id, updateFields, {
+      new: true,
+    });
     if (!updatedAdmin) {
       return res.status(404).json({
         success: false,
         message: "Admin topilmadi!",
       });
-    } else {
-      return res.status(200).json({
-        success: true,
-        message: "Admin muvaffaqiyatli yangilandi!",
-      });
     }
+    return res.status(200).json({
+      success: true,
+      message: "Admin muvaffaqiyatli yangilandi!",
+    });
   } catch (error) {
     console.error("Adminni o'zgartirishda Xatolik! — ", error.message);
     return res.status(500).json({

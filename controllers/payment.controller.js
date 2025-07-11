@@ -1,4 +1,4 @@
-const { Payment } = require("../models/paymentSchema"); // ----Payment
+const Payment = require("../models/paymentSchema"); // ----Payment
 
 // ----postPayment
 exports.postPayment = async (req, res) => {

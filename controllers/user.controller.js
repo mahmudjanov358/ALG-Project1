@@ -1,4 +1,4 @@
-const { User } = require("../models/userSchema"); // ----User
+const User = require("../models/userSchema"); // ----User
 
 // ----postUser
 exports.postUser = async (req, res) => {

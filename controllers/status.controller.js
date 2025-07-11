@@ -1,4 +1,4 @@
-const { Status } = require("../models/statusSchema"); // ----Status
+const Status = require("../models/statusSchema"); // ----Status
 
 // ----postStatus
 exports.postStatus = async (req, res) => {

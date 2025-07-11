@@ -1,4 +1,4 @@
-const { Product_Reviews } = require("../models/product_reviewsSchema"); // ----Product_Reviews
+const Product_Reviews = require("../models/product_reviewsSchema"); // ----Product_Reviews
 
 // ----postProduct_Reviews
 exports.postProduct_Reviews = async (req, res) => {
