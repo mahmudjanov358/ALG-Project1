@@ -81,6 +81,16 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Category ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               name:
+   *                 type: string
+   *                 description: Category nomi
    *     responses:
    *       200:
    *         description: Category muvaffaqiyatli yangilandi

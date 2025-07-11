@@ -92,6 +92,19 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Product_Reviews ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               review_text:
+   *                 type: string
+   *                 description: Review text
+   *               rating:
+   *                 type: number
+   *                 description: Rating
    *     responses:
    *       200:
    *         description: Product_Reviews muvaffaqiyatli yangilandi

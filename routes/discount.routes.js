@@ -45,6 +45,11 @@ module.exports = Router() // ----Router
    *     tags: [Discount]
    *     summary: Discountlarni ko'rish
    *     description: Discountlarni ko'rish jarayoni
+   *     responses:
+   *       200:
+   *         description: Discountlarni muvaffaqiyatli ko'rildi
+   *       500:
+   *         description: Ichki Server Xatosi
    */
   .get("/", discount.getDiscount) // ----getDiscount
 
@@ -82,6 +87,22 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Discount ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               name:
+   *                 type: string
+   *                 description: Discount nomi
+   *               description:
+   *                 type: string
+   *                 description: Discount tavsifi
+   *               percent:
+   *                 type: number
+   *                 description: Discount foiz
    *     responses:
    *       200:
    *         description: Discount muvaffaqiyatli yangilandi

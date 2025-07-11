@@ -99,6 +99,34 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: User ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               username:
+   *                 type: string
+   *                 description: Username
+   *               name:
+   *                 type: string
+   *                 description: Name
+   *               lastName:
+   *                 type: string
+   *                 description: Last Name
+   *               phone:
+   *                 type: string
+   *                 description: Phone
+   *               email:
+   *                 type: string
+   *                 description: Email
+   *               address:
+   *                 type: string
+   *                 description: Address
+   *               photo:
+   *                 type: string
+   *                 description: Photo
    *     responses:
    *       200:
    *         description: User muvaffaqiyatli yangilandi

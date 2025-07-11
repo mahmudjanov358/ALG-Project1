@@ -81,6 +81,16 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Payment ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               name:
+   *                 type: string
+   *                 description: Payment nomi
    *     responses:
    *       200:
    *         description: Payment muvaffaqiyatli yangilandi

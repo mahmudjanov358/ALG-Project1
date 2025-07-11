@@ -28,7 +28,7 @@ exports.getFavorite = async (req, res) => {
     const favorite = await Favorite.find({});
     return res.status(200).json({
       success: true,
-      message: "Favorite ro'yhati!",
+      message: "Favorites ro'yhati!",
       favorites: favorite,
     });
   } catch (error) {

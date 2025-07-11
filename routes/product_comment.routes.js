@@ -89,6 +89,16 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Product_Comment ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               comment:
+   *                 type: string
+   *                 description: Comment
    *     responses:
    *       200:
    *         description: Product_Comment muvaffaqiyatli yangilandi

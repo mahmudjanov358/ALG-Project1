@@ -89,6 +89,16 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Order_Details ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               total:
+   *                 type: number
+   *                 description: Total summa
    *     responses:
    *       200:
    *         description: Order_Details muvaffaqiyatli yangilandi

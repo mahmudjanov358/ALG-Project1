@@ -89,6 +89,19 @@ module.exports = Router() // ----Router
    *         in: path
    *         required: true
    *         description: Product_Variant ID
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               price:
+   *                 type: number
+   *                 description: Price
+   *               color:
+   *                 type: string
+   *                 description: Color
    *     responses:
    *       200:
    *         description: Product_Variant muvaffaqiyatli yangilandi
