@@ -4,7 +4,7 @@ const cors = require("cors"); // ----Cors Library
 require("dotenv").config(); // ----Environment Variables Library
 const swaggerJsdoc = require("swagger-jsdoc"); // ----Swagger-Jsdoc Library
 const swaggerUi = require("swagger-ui-express"); // ----Swagger-Ui-Express Library
-const swaggerOptions = require("./config/swaggerOptions"); // ----Swagger Options
+const swaggerOptions = require("./configs/swaggerOptions"); // ----Swagger Options
 
 const app = express(); // ----App Server
 
