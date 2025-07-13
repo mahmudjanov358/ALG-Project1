@@ -86,7 +86,7 @@ node index.js
 http://localhost:2000/api-docs
 ```
 
-U yerda har bir endpointni test qilishingiz mumkin (`GET`, `POST`, `PUT`, `DELETE`).
+U yerda har bir endpointni test qilishingiz mumkin (`CREATE`, `READ`, `UPDATE`, `DELETE`).
 
 ---
 
