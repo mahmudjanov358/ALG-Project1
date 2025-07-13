@@ -35,7 +35,7 @@ project1/
 ├── controllers/    # CRUD logikalar
 ├── middlewares/    # Validatsiya va token tekshiruvlar
 ├── models/         # Mongoose schemalar
-├── routes/         # Barcha endpointlar marshrutlari
+├── routers/         # Barcha endpointlar marshrutlari
 ├── validations/    # Joi validatsiya sxemalari
 ├── .env            # Maxfiy sozlamalar
 ├── .gitignore      # Git'dan chiqarilgan fayllar
