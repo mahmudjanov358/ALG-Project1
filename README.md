@@ -129,9 +129,9 @@ app.use(cors({ origin: "*" })); // Faqat devda!
 
 📬 **Aloqa uchun ijtimoiy sahifalar:**
 
-- [<img src="https://cdn.simpleicons.org/telegram/27A7E7" width="24" /> Telegram](https://t.me/mahmudjanov_2009)
-- [<img src="https://cdn.simpleicons.org/instagram/E4405F" width="24" /> Instagram](https://instagram.com/a_mahmudjanov)
-- [<img src="https://cdn.simpleicons.org/github/000000" width="24" /> GitHub](https://github.com/mahmudjanov358)
+- [<img src="https://cdn.simpleicons.org/telegram/27A7E7" width="16" /> Telegram](https://t.me/mahmudjanov_2009)
+- [<img src="https://cdn.simpleicons.org/instagram/E4405F" width="16" /> Instagram](https://instagram.com/a_mahmudjanov)
+- [<img src="https://cdn.simpleicons.org/github/010101" width="16" /> GitHub](https://github.com/mahmudjanov358)
 
 ---
 
