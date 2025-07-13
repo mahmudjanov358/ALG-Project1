@@ -56,7 +56,7 @@ cd Project1
 2. **Paketlarni o‘rnatish:**
 
 ```bash
-npm install
+npm i
 ```
 
 3. **`.env` faylini yaratish:**
