@@ -129,7 +129,7 @@ app.use(cors({ origin: "*" })); // Faqat devda!
 
 📬 **Aloqa uchun ijtimoiy sahifalar:**
 
-- [📎 Telegram](https://t.me/@mahmudjanov_2009)
+- [📎 Telegram](https://t.me/mahmudjanov_2009)
 - [📸 Instagram](https://instagram.com/a_mahmudjanov)
 - [💻 GitHub](https://github.com/mahmudjanov358)
 
