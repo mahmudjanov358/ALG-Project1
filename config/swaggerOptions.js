@@ -74,5 +74,5 @@ module.exports = swaggerOptions = {
       }, // ----User
     ],
   },
-  apis: ["./routes/*.js"],
+  apis: ["./routers/*.js"],
 }; // ----swaggerOptions
