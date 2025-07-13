@@ -1,74 +1,134 @@
-# Project1
+# 🛠️ Project1 — Express.js API Backend
 
-Bu loyiha **Project1** asosan amaliy ishlar uchun ishlab chiqilgan. Loyiha Express.js asosida backend API yaratish, Swagger yordamida API hujjatlarini avtomatik generatsiya qilish va turli bo‘limlar (Admin, Cart, Category, Product va boshqalar) bilan ishlashni o‘z ichiga oladi.
+**Project1** — bu Express.js asosida ishlab chiqilgan RESTful API bo‘lib, Swagger orqali hujjatlashtirish, JWT bilan autentifikatsiya, MongoDB bilan model asosida ma'lumotlar bazasi integratsiyasini o‘z ichiga oladi. Loyihada real hayotdagi tizimlar uchun zarur bo‘lgan barcha asosiy CRUD operatsiyalar mavjud.
 
-## Loyihaning asosiy imkoniyatlari
+---
 
-- **Admin bo‘limi:** Adminlarni yaratish, tizimga kiritish (login), ro‘yxatini ko‘rish, ID bo‘yicha olish va yangilash imkoniyati mavjud.
-- **Cart, Category, Product va boshqa bo‘limlar:** Har bir bo‘lim uchun alohida endpointlar mavjud va ular Swagger orqali hujjatlashtirilgan.
-- **Validatsiya:** So‘rovlar uchun maxsus validatsiya middleware’lari ishlatilgan.
-- **Swagger UI:** API endpointlarini ko‘rish va test qilish uchun Swagger UI integratsiya qilingan.
+## 🚀 Xususiyatlar
 
-## Texnologiyalar
+- 🔐 **Admin moduli:** Ro'yxatdan o'tish, login, yangilash, o‘chirish.
+- 🛒 **Cart & Cart_Items:** Foydalanuvchi savatidagi mahsulotlarni boshqarish.
+- 🗃️ **Category, Product, Discount:** Mahsulotlar va chegirmalarni modullashtirish.
+- ⭐ **Favorite & Reviews:** Foydalanuvchi sevimlilari va izohlar bilan ishlash.
+- 💳 **Order & Payment:** Buyurtma va to‘lov ma’lumotlari.
+- 📊 **Swagger UI:** Real vaqtda hujjatlashtirilgan API test muhiti.
+- ✅ **Joi validatsiya:** Har bir endpoint uchun server tarafdan validatsiya.
 
-- Node.js
-- Express.js
-- Swagger (swagger-jsdoc, swagger-ui-express)
-- JavaScript
+---
 
-## Loyihaning tuzilmasi
+## 🧱 Texnologiyalar
 
-- `config/` - Swagger va boshqa konfiguratsiyalar
-- `controllers/` - Har bir bo‘lim uchun logika
-- `middlewares/` - Validatsiya va boshqa oraliq funksiyalar
-- `models/` - Loyihaning modelslari
-- `routes/` - API endpointlar joylashgan
-- `validations/` - So‘rovlar uchun validatsiya sxemalari
-- `.gitignore/` - Github tarkibiga tegishli bo'lmaganlar
-- `index.js/` - Asosiy Server fayli
+- `Node.js`, `Express.js`
+- `MongoDB`, `Mongoose`
+- `Joi` (input validation)
+- `JWT` (autentifikatsiya)
+- `Swagger` (`swagger-jsdoc`, `swagger-ui-express`)
+- `dotenv`, `cors`, `bcrypt`
 
-1. **Repository-ni klonlash:**
+---
 
-   ```bash
-   git clone https://github.com/mahmudjanov358/Back-Project1.git
-   cd Project1
-   ```
+## 📁 Loyihaning Tuzilmasi
 
-2. **Kerakli paketlarni o‘rnatish:**
+```
+project1/
+├── config/         # Swagger konfiguratsiyasi
+├── controllers/    # CRUD logikalar
+├── middlewares/    # Validatsiya va token tekshiruvlar
+├── models/         # Mongoose schemalar
+├── routes/         # Barcha endpointlar marshrutlari
+├── validations/    # Joi validatsiya sxemalari
+├── .env            # Maxfiy sozlamalar
+├── .gitignore      # Git'dan chiqarilgan fayllar
+└── index.js        # Kirish nuqtasi (entry point)
+```
 
-   ```bash
-   npm i bcrypt body-parser cors dotenv express joi jsonwebtoken mongoose nodemon swagger-jsdoc swagger-ui-express
-   ```
+---
 
-3. **Serverni ishga tushurish:**
+## ⚙️ Ishga tushirish
 
-   ```bash
-   1  npm run go
-   2  npm run dev
-   3  npm run start
-   4  node index.js
-   ```
+1. **Repository’ni klonlash:**
 
-4. **Modelslar:**
+```bash
+git clone https://github.com/mahmudjanov358/Back-Project1.git
+cd Project1
+```
 
-   ```bash
-    1 Admin
-    2 Cart
-    3 Cart_Item
-    4 Category
-    5 Ddiscount
-    6 Favorite
-    7 Order
-    8 Order_Details
-    9 Payment
-    10 Product
-    11 Product_Comment
-    12 Product_Reviews
-    13 Product_Variant
-    14 Status
-    15 User
-   ```
+2. **Paketlarni o‘rnatish:**
 
-## Swagger API hujjatlari - swagger-jsdoc & swagger-ui-express bilan
+```bash
+npm install
+```
 
-Swagger UI orqali barcha endpointlarni ko‘rish va test qilish uchun quyidagi manzilga o‘ting: http://localhost:2000/api-docs
+3. **`.env` faylini yaratish:**
+
+```env
+PORT=2000
+MONGO_URL=mongodb://localhost:27017/project1
+JWT_SECRET=SUPERSCRET46
+```
+
+4. **Serverni ishga tushurish:**
+
+```bash
+npm run dev       # yoki
+npm run go        # yoki
+npm start         # yoki
+node index.js
+```
+
+---
+
+## 📌 Swagger API hujjatlari
+
+👉 Swagger UI’ga kirish uchun:
+
+```
+http://localhost:2000/api-docs
+```
+
+U yerda har bir endpointni test qilishingiz mumkin (`GET`, `POST`, `PUT`, `DELETE`).
+
+---
+
+## 📚 Model nomlari
+
+| №   | Model           |
+| --- | --------------- |
+| 1   | Admin           |
+| 2   | Cart            |
+| 3   | Cart_Item       |
+| 4   | Category        |
+| 5   | Discount        |
+| 6   | Favorite        |
+| 7   | Order           |
+| 8   | Order_Details   |
+| 9   | Payment         |
+| 10  | Product         |
+| 11  | Product_Comment |
+| 12  | Product_Reviews |
+| 13  | Product_Variant |
+| 14  | Status          |
+| 15  | User            |
+
+---
+
+## 🧠 Eslatma
+
+Agar sizda frontend bilan ishlash yoki CORS bilan bog‘liq muammolar bo‘lsa, `cors` middleware ni to‘g‘ri sozlang:
+
+```js
+const cors = require("cors");
+app.use(cors({ origin: "*" })); // Faqat devda!
+```
+
+---
+
+## 💬 Muallif
+
+Created by [Mahmudjanov](https://github.com/mahmudjanov358)
+
+---
+
+## 📄 Litsenziya
+
+Ushbu loyiha MIT litsenziyasi asosida tarqatiladi.
