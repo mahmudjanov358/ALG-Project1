@@ -70,8 +70,8 @@ JWT_SECRET=SUPERSCRET46
 4. **Serverni ishga tushurish:**
 
 ```bash
-npm run dev       # yoki
 npm run go        # yoki
+npm run dev       # yoki
 npm start         # yoki
 node index.js
 ```
