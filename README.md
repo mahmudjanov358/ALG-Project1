@@ -125,7 +125,7 @@ app.use(cors({ origin: "*" })); // Faqat devda!
 
 ## 💬 Muallif
 
-Created by [ABDULLOH MAHMUDJANOV](https://github.com/mahmudjanov358) — _"Sukunat — eng yaxshi va eng oqilona tanlovdur!!!"_
+[ABDULLOH MAHMUDJANOV](https://github.com/mahmudjanov358) tomonidan yaratilgan — _"Sukunat — eng yaxshi va eng oqilona tanlovdur!!!"_
 
 ---
 
