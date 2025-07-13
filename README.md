@@ -125,7 +125,7 @@ app.use(cors({ origin: "*" })); // Faqat devda!
 
 ## 💬 Muallif
 
-Created by [Mahmudjanov](https://github.com/mahmudjanov358)
+Created by [ABDULLOH MAHMUDJANOV](https://github.com/mahmudjanov358)
 
 ---
 
