@@ -31,15 +31,15 @@
 
 ```
 project1/
-├── config/         # Swagger konfiguratsiyasi
-├── controllers/    # CRUD logikalar
-├── middlewares/    # Validatsiya va token tekshiruvlar
-├── models/         # Mongoose schemalar
+├── config/          # Swagger konfiguratsiyasi
+├── controllers/     # CRUD logikalar
+├── middlewares/     # Validatsiya va token tekshiruvlar
+├── models/          # Mongoose schemalar
 ├── routers/         # Barcha endpointlar marshrutlari
-├── validations/    # Joi validatsiya sxemalari
-├── .env            # Maxfiy sozlamalar
-├── .gitignore      # Git'dan chiqarilgan fayllar
-└── index.js        # Kirish nuqtasi (entry point)
+├── validations/     # Joi validatsiya sxemalari
+├── .env             # Maxfiy sozlamalar
+├── .gitignore       # Git'dan chiqarilgan fayllar
+└── index.js         # Kirish nuqtasi (entry point)
 ```
 
 ---
