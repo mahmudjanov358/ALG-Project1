@@ -23,6 +23,9 @@ module.exports = Router() // ----Router
    *               description:
    *                 type: string
    *                 description: Product tavsifi
+   *               photo:
+   *                 type: string
+   *                 description: Product rasmi
    *               price:
    *                 type: number
    *                 description: Product narxi
