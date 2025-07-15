@@ -1,12 +1,12 @@
 const express = require("express"); // ----Express Library
 const { connect } = require("mongoose"); // ----Mongoose Library
 const cors = require("cors"); // ----Cors Library
-require("dotenv").config(); // ----Environment Variables Library
+require("dotenv").config(); // ----Dotenv Library
 const swaggerJsdoc = require("swagger-jsdoc"); // ----Swagger-Jsdoc Library
 const swaggerUi = require("swagger-ui-express"); // ----Swagger-Ui-Express Library
-const swaggerOptions = require("./configs/swaggerOptions"); // ----Swagger Options
+const swaggerOptions = require("./configs/swaggerOptions"); // ----Configs Swagger Options
 
-const app = express(); // ----App Server
+const app = express(); // ----Express Server
 
 // ----Middleware
 app.use(express.json()); // ----Express JSON Middleware
@@ -22,7 +22,7 @@ async function connectToDB() {
 }
 connectToDB(); // ----Database connectToDB
 
-// ----swaggerDocs
+// ----Swagger Documentation
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
