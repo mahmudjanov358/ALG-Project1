@@ -64,15 +64,7 @@ cd Project1
 npm i
 ```
 
-3. **`.env` faylini yaratish:**
-
-```env
-PORT=2000
-MONGO_URL=mongodb://localhost:27017/project1
-JWT_SECRET=SUPERSCRET46
-```
-
-4. **Serverni ishga tushurish:**
+3. **Serverni ishga tushurish:**
 
 ```bash
 npm run go        # yoki
