@@ -19,7 +19,6 @@ const colors = [
   "Maroon",
   "Teal",
 ];
-
 exports.postProduct_VariantValidationSchema = Joi.object({
   product_id: Joi.string().required().messages({
     "string.base": "Product ID string ko'rinishida bo'lishi kerak!",

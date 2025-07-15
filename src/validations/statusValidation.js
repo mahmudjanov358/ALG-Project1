@@ -1,5 +1,4 @@
 const Joi = require("joi"); // ----Joi Library
-
 const statuses = ["active", "inactive", "pending", "delivered", "cancelled"];
 
 exports.postStatusValidationSchema = Joi.object({

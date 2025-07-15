@@ -17,7 +17,6 @@ const payment_options = [
   "Qiwi",
   "Yandex_Money",
 ];
-
 exports.postPaymentValidationSchema = Joi.object({
   name: Joi.string()
     .required()
