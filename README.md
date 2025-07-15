@@ -34,11 +34,11 @@ project1/
 ├── node_modules/            # NPM paketlari
 ├── src/                     # Asosiy manba kodi
 │   ├── configs/             # Konfiguratsiyalar (masalan, db.js, swagger.js, app config)
-│   ├── controllers/        # Business logika, CRUD funksiyalar
-│   ├── middlewares/        # Middleware funksiyalar (auth, error handler va h.k.)
-│   ├── models/             # Mongoose yoki Sequelize modellari
-│   ├── routers/            # Routerlar (index.js, user.js va h.k.)
-│   └── validations/        # Joi yoki Zod validatsiya sxemalari
+│   ├── controllers/         # Business logika, CRUD funksiyalar
+│   ├── middlewares/         # Middleware funksiyalar (auth, error handler va h.k.)
+│   ├── models/              # Mongoose yoki Sequelize modellari
+│   ├── routers/             # Routerlar (index.js, user.js va h.k.)
+│   └── validations/         # Joi yoki Zod validatsiya sxemalari
 ├── .env                     # Maxfiy ma'lumotlar (token, db uri)
 ├── .gitignore               # Gitga qo‘shilmaydigan fayllar
 ├── index.js                 # Kirish nuqtasi (app yaratib, serverni ishga tushiradi)
