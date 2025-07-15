@@ -31,15 +31,20 @@
 
 ```
 project1/
-├── config/          # Swagger konfiguratsiyasi
-├── controllers/     # CRUD logikalar
-├── middlewares/     # Validatsiya va token tekshiruvlar
-├── models/          # Mongoose schemalar
-├── routers/         # Barcha endpointlar marshrutlari
-├── validations/     # Joi validatsiya sxemalari
-├── .env             # Maxfiy sozlamalar
-├── .gitignore       # Git'dan chiqarilgan fayllar
-└── index.js         # Kirish nuqtasi (entry point)
+├── node_modules/            # NPM paketlari
+├── src/                     # Asosiy manba kodi
+│   ├── configs/             # Konfiguratsiyalar (masalan, db.js, swagger.js, app config)
+│   ├── controllers/        # Business logika, CRUD funksiyalar
+│   ├── middlewares/        # Middleware funksiyalar (auth, error handler va h.k.)
+│   ├── models/             # Mongoose yoki Sequelize modellari
+│   ├── routers/            # Routerlar (index.js, user.js va h.k.)
+│   └── validations/        # Joi yoki Zod validatsiya sxemalari
+├── .env                     # Maxfiy ma'lumotlar (token, db uri)
+├── .gitignore               # Gitga qo‘shilmaydigan fayllar
+├── index.js                 # Kirish nuqtasi (app yaratib, serverni ishga tushiradi)
+├── package-lock.json        # NPM lockfile (versiyalarni qattiq belgilaydi)
+├── package.json             # Loyihaning metadata va dependencies
+└── README.md                # Loyihani tushuntiruvchi fayl
 ```
 
 ---
