@@ -126,7 +126,9 @@ app.use(cors({ origin: "*" })); // Faqat devda!
 
 ---
 
-Muallif so'zi — **_"ٱلصَّمْتُ هُوَ ٱلْخِيَارُ ٱلْأَفْضَلُ وَٱلْأَكْثَرُ حِكْمَةً!!!"_** — **_"Sukunat — eng yaxshi va eng oqilona tanlovdur!!!"_**
+✨ Muallif so‘zi:
+**_“ٱلصَّمْتُ هُوَ ٱلْخِيَارُ ٱلْأَفْضَلُ وَٱلْأَكْثَرُ حِكْمَةً!!!”_**
+**_“Sukunat — eng yaxshi va eng oqilona tanlovdur!!!”_**
 
 📬 **Aloqa uchun ijtimoiy sahifalar:**
 
