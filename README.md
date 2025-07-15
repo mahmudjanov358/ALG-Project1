@@ -61,7 +61,7 @@ cd Project1
 2. **Paketlarni o‘rnatish:**
 
 ```bash
-npm i
+npm i bcrypt body-parser cors dotenv express joi jsonwebtoken mongoose nodemon swagger-jsdoc swagger-ui-express
 ```
 
 3. **Serverni ishga tushurish:**
